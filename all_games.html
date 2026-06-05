@@ -41,7 +41,7 @@ button:hover{
     background:#444;
 }
 
-/* GAME */
+/* GAME SCREEN */
 #gameScreen{
     display:none;
     width:100%;
@@ -76,13 +76,14 @@ iframe{
 
 <div class="grid">
 
+<!-- JUEGOS -->
 <button onclick="play('1.12.html')">Minecraft 1.12</button>
 <button onclick="play('1.5.html')">Minecraft 1.5</button>
 <button onclick="play('1.8.html')">Minecraft 1.8</button>
 <button onclick="play('10minutestilldawn.html')">10 Minutes Till Dawn</button>
 <button onclick="play('12minibattles.html')">12 Mini Battles</button>
-<button onclick="play('1on1soccer.html')">1 on 1 Soccer</button>
-<button onclick="play('1on1tennis.html')">1 on 1 Tennis</button>
+<button onclick="play('1on1soccer.html')">1v1 Soccer</button>
+<button onclick="play('1on1tennis.html')">1v1 Tennis</button>
 <button onclick="play('1v1.lol.html')">1v1 LOL</button>
 <button onclick="play('2048.html')">2048</button>
 <button onclick="play('2048cupcakes.html')">2048 Cupcakes</button>
@@ -95,20 +96,16 @@ iframe{
 <button onclick="play('Alpha_1.2.6.html')">Minecraft Alpha</button>
 <button onclick="play('amongus.html')">Among Us</button>
 <button onclick="play('angrybirds.html')">Angry Birds</button>
-<button onclick="play('angrybirdsshowdown.html')">Angry Birds Showdown</button>
 <button onclick="play('angrybirdsspace.html')">Angry Birds Space</button>
 <button onclick="play('awesometanks.html')">Awesome Tanks</button>
 <button onclick="play('awesometanks2.html')">Awesome Tanks 2</button>
 <button onclick="play('backrooms.html')">Backrooms</button>
 <button onclick="play('badicecream.html')">Bad Ice Cream</button>
-<button onclick="play('badicecream2.html')">Bad Ice Cream 2</button>
-<button onclick="play('badicecream3.html')">Bad Ice Cream 3</button>
 <button onclick="play('baldisbasics.html')">Baldi's Basics</button>
 <button onclick="play('basketballstars.html')">Basketball Stars</button>
 <button onclick="play('basketbros.html')">Basket Bros</button>
 <button onclick="play('bitlife.html')">BitLife</button>
 <button onclick="play('bloxorz.html')">Bloxorz</button>
-<button onclick="play('bloonsTD.html')">Bloons TD</button>
 <button onclick="play('bloonsTD5.html')">Bloons TD 5</button>
 <button onclick="play('bowmasters.html')">Bowmasters</button>
 <button onclick="play('breakingthebank.html')">Breaking the Bank</button>
@@ -119,7 +116,6 @@ iframe{
 <button onclick="play('cookieclicker.htm')">Cookie Clicker</button>
 <button onclick="play('crossyroad.htm')">Crossy Road</button>
 <button onclick="play('cuttherope.html')">Cut the Rope</button>
-<button onclick="play('dadish.html')">Dadish</button>
 <button onclick="play('doodlejump.html')">Doodle Jump</button>
 <button onclick="play('driftboss.htm')">Drift Boss</button>
 <button onclick="play('ducklife4.html')">Duck Life 4</button>
@@ -174,6 +170,15 @@ iframe{
 <button onclick="play('worldshardestgame.html')">World's Hardest Game</button>
 <button onclick="play('zombierush.html')">Zombie Rush</button>
 
+<!-- BOTONES EXTERNOS -->
+<button onclick="openExternal('https://eu3-browse.startpage.com/av/proxy?ep=42316444586b5162456b423041414e575078647452676c4557463444464164704e6b4d47436c73725a55385a62425959584249694977415248564d725956644b544146644256313164424a6451464e6f4e31394953416c62574163684945634154514e765977775a47785966456c674b465556514e4859474d7952426177456c426b423042514e58505251736346636348776c6142464169636b4a51514155385977386354464a534251527949305663514645395967784a5478596358434d6d4c565542&ek=636q6s724o6n42725957564851535n6o65544n66&ekdata=8eec47833ef51ce9492dbca87a5849c6&sc=maXqNizptiNxNp157TSTUkz8usn1tSeOlaJDmM7iOsjy0G8wf8be8po9PxQj5uonfyFmUAAWa0ciCx')">
+🌐 Web 1
+</button>
+
+<button onclick="openExternal('https://eu3-browse.startpage.com/av/proxy?ep=55514149585530524d5568354c4146324f786831526c675442306b4f4d414d6947455a71486c49714a51386d443070634e51676f5331456748456b6d50566b4745513959646c7373434564394756782b59316c5547317053636c677657784e39484135314f51734744303053667941654468414a4f575230546c636c555851775a31344f53426341573034335051554347416b46636c5279586b5a38536c39774e6730444551734463566c385745643154416c7959517342443035634241776d486b453d&ek=4n4431674o546p68516q314o6253524566543148&ekdata=15ac83d1791e2be42a68a853cf1631dd&sc=5mZRtno4IopyPcm3F9aSe7T0Bphct1ZI9YeVudAFhC4rXTDNPfsRplWgE6yyi0u3FJ4VSxNoyniBn')">
+🌐 Web 2
+</button>
+
 </div>
 </div>
 
@@ -192,6 +197,12 @@ function play(game){
 
     document.getElementById("gameFrame").src =
         "https://altf4.sbs/games/all_games/" + game;
+}
+
+function openExternal(url){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("gameScreen").style.display = "block";
+    document.getElementById("gameFrame").src = url;
 }
 
 function back(){
