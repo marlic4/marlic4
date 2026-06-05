@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juegos Online</title>
 
+<style>
+body{
+    margin:0;
+    background:#f0f0f0;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    text-align:center;
+    padding:20px;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.game{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    text-decoration:none;
+    color:black;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.game img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.game p{
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Juegos Online</h1>
+
+<div class="games">
+
+<a class="game" href="1.12.html">
+<img src="img/minecraft112.jpg">
+<p>Minecraft 1.12</p>
+</a>
+
+<a class="game" href="1.8.html">
+<img src="img/minecraft18.jpg">
+<p>Minecraft 1.8</p>
+</a>
+
+<a class="game" href="1.5.html">
+<img src="img/minecraft15.jpg">
+<p>Minecraft 1.5</p>
+</a>
+
+<a class="game" href="2048.html">
+<img src="img/2048.jpg">
+<p>2048</p>
+</a>
+
+<a class="game" href="all_games/">
+<img src="img/allgames.jpg">
+<p>Más Juegos</p>
+</a>
+
+<a class="game" href="Alpha_1.2.6.html">
+<img src="img/minecraftalpha.jpg">
+<p>Minecraft Alpha</p>
+</a>
+
+<a class="game" href="geometrydashlite.html">
+<img src="img/geometrydash.jpg">
+<p>Geometry Dash Lite</p>
+</a>
+
+<a class="game" href="slope.html">
+<img src="img/slope.jpg">
+<p>Slope</p>
+</a>
+
+<a class="game" href="slope2player.html">
+<img src="img/slope2players.jpg">
+<p>Slope 2 Players</p>
+</a>
+
+<a class="game" href="sm64.html">
+<img src="img/mario64.jpg">
+<p>Super Mario 64</p>
+</a>
+
+</div>
+
+</body>
+</html>
