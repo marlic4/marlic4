@@ -12,40 +12,40 @@ body{
     color:white;
 }
 
-/* LISTA */
+h1{
+    text-align:center;
+    padding:10px;
+}
+
+/* MENU */
 #menu{
     padding:20px;
 }
 
-h1{
-    text-align:center;
-}
-
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
     gap:10px;
 }
 
-.grid button{
+button{
     padding:10px;
     cursor:pointer;
     border:none;
     background:#222;
     color:white;
     border-radius:8px;
-    transition:0.2s;
 }
 
-.grid button:hover{
+button:hover{
     background:#444;
 }
 
-/* JUEGO */
+/* GAME */
 #gameScreen{
     display:none;
-    height:100vh;
     width:100%;
+    height:100vh;
 }
 
 #topbar{
@@ -55,10 +55,10 @@ h1{
 
 #backBtn{
     padding:10px;
-    cursor:pointer;
-    border:none;
     background:red;
     color:white;
+    border:none;
+    cursor:pointer;
     border-radius:5px;
 }
 
@@ -79,12 +79,12 @@ iframe{
 <button onclick="play('1.12.html')">Minecraft 1.12</button>
 <button onclick="play('1.5.html')">Minecraft 1.5</button>
 <button onclick="play('1.8.html')">Minecraft 1.8</button>
-<button onclick="play('2048.html')">2048</button>
 <button onclick="play('10minutestilldawn.html')">10 Minutes Till Dawn</button>
 <button onclick="play('12minibattles.html')">12 Mini Battles</button>
-<button onclick="play('1on1soccer.html')">1v1 Soccer</button>
-<button onclick="play('1on1tennis.html')">1v1 Tennis</button>
+<button onclick="play('1on1soccer.html')">1 on 1 Soccer</button>
+<button onclick="play('1on1tennis.html')">1 on 1 Tennis</button>
 <button onclick="play('1v1.lol.html')">1v1 LOL</button>
+<button onclick="play('2048.html')">2048</button>
 <button onclick="play('2048cupcakes.html')">2048 Cupcakes</button>
 <button onclick="play('3Dflightsimulator.html')">3D Flight Simulator</button>
 <button onclick="play('8ballclassic.html')">8 Ball Classic</button>
@@ -95,35 +95,58 @@ iframe{
 <button onclick="play('Alpha_1.2.6.html')">Minecraft Alpha</button>
 <button onclick="play('amongus.html')">Among Us</button>
 <button onclick="play('angrybirds.html')">Angry Birds</button>
+<button onclick="play('angrybirdsshowdown.html')">Angry Birds Showdown</button>
 <button onclick="play('angrybirdsspace.html')">Angry Birds Space</button>
+<button onclick="play('awesometanks.html')">Awesome Tanks</button>
+<button onclick="play('awesometanks2.html')">Awesome Tanks 2</button>
+<button onclick="play('backrooms.html')">Backrooms</button>
 <button onclick="play('badicecream.html')">Bad Ice Cream</button>
+<button onclick="play('badicecream2.html')">Bad Ice Cream 2</button>
+<button onclick="play('badicecream3.html')">Bad Ice Cream 3</button>
 <button onclick="play('baldisbasics.html')">Baldi's Basics</button>
 <button onclick="play('basketballstars.html')">Basketball Stars</button>
+<button onclick="play('basketbros.html')">Basket Bros</button>
 <button onclick="play('bitlife.html')">BitLife</button>
 <button onclick="play('bloxorz.html')">Bloxorz</button>
+<button onclick="play('bloonsTD.html')">Bloons TD</button>
 <button onclick="play('bloonsTD5.html')">Bloons TD 5</button>
+<button onclick="play('bowmasters.html')">Bowmasters</button>
+<button onclick="play('breakingthebank.html')">Breaking the Bank</button>
+<button onclick="play('bubbleshooter.html')">Bubble Shooter</button>
 <button onclick="play('candycrush.html')">Candy Crush</button>
+<button onclick="play('capybaraclicker.html')">Capybara Clicker</button>
 <button onclick="play('chess.html')">Chess</button>
 <button onclick="play('cookieclicker.htm')">Cookie Clicker</button>
 <button onclick="play('crossyroad.htm')">Crossy Road</button>
 <button onclick="play('cuttherope.html')">Cut the Rope</button>
+<button onclick="play('dadish.html')">Dadish</button>
 <button onclick="play('doodlejump.html')">Doodle Jump</button>
 <button onclick="play('driftboss.htm')">Drift Boss</button>
 <button onclick="play('ducklife4.html')">Duck Life 4</button>
+<button onclick="play('earntodie.html')">Earn to Die</button>
+<button onclick="play('escaperoad.html')">Escape Road</button>
+<button onclick="play('fancypantsadventure.html')">Fancy Pants Adventure</button>
 <button onclick="play('fireboyandwatergirl.html')">Fireboy & Watergirl</button>
 <button onclick="play('flappybird.html')">Flappy Bird</button>
 <button onclick="play('fnaf.html')">FNAF</button>
 <button onclick="play('footballbros.html')">Football Bros</button>
+<button onclick="play('footballlegends.html')">Football Legends</button>
+<button onclick="play('freerider3.html')">Free Rider 3</button>
 <button onclick="play('fruitninja.html')">Fruit Ninja</button>
+<button onclick="play('funnybattle.html')">Funny Battle</button>
+<button onclick="play('geometrydash.html')">Geometry Dash</button>
 <button onclick="play('geometrydashlite.html')">Geometry Dash Lite</button>
 <button onclick="play('googledino.html')">Google Dino</button>
 <button onclick="play('granny.html')">Granny</button>
 <button onclick="play('happywheels.html')">Happy Wheels</button>
 <button onclick="play('helixjump.html')">Helix Jump</button>
+<button onclick="play('highwaytraffic.html')">Highway Traffic</button>
 <button onclick="play('houseofhazards.html')">House of Hazards</button>
+<button onclick="play('idlebreakout.html')">Idle Breakout</button>
 <button onclick="play('jetpackjoyride.html')">Jetpack Joyride</button>
-<button onclick="play('learntofly2.html')">Learn to Fly 2</button>
-<button onclick="play('minecraft.html')">Minecraft</button>
+<button onclick="play('learntofly3.html')">Learn to Fly 3</button>
+<button onclick="play('leveldevil.html')">Level Devil</button>
+<button onclick="play('madalinstuntcars2.html')">Madalin Stunt Cars 2</button>
 <button onclick="play('minesweeper.html')">Minesweeper</button>
 <button onclick="play('monkeymart.htm')">Monkey Mart</button>
 <button onclick="play('motox3m.htm')">Moto X3M</button>
@@ -131,19 +154,25 @@ iframe{
 <button onclick="play('papasburgeria.html')">Papa's Burgeria</button>
 <button onclick="play('papaspizzeria.html')">Papa's Pizzeria</button>
 <button onclick="play('plantsvszombies.html')">Plants vs Zombies</button>
+<button onclick="play('polytrack.html')">Polytrack</button>
 <button onclick="play('retrobowl.html')">Retro Bowl</button>
 <button onclick="play('run3.html')">Run 3</button>
+<button onclick="play('sandgame.html')">Sand Game</button>
 <button onclick="play('slope.html')">Slope</button>
+<button onclick="play('slope2player.html')">Slope 2 Players</button>
 <button onclick="play('sm64.html')">Super Mario 64</button>
+<button onclick="play('snowballio.html')">Snowball.io</button>
 <button onclick="play('spacebarclicker.html')">Spacebar Clicker</button>
 <button onclick="play('stack.html')">Stack</button>
 <button onclick="play('stickmanhook.html')">Stickman Hook</button>
-<button onclick="play('subwaysurferssanfrancisco.html')">Subway Surfers</button>
+<button onclick="play('subwaysurferssanfrancisco.html')">Subway Surfers SF</button>
 <button onclick="play('superhot.html')">Superhot</button>
 <button onclick="play('templerun2.htm')">Temple Run 2</button>
 <button onclick="play('tunnelrush.html')">Tunnel Rush</button>
 <button onclick="play('vex5.html')">Vex 5</button>
-<button onclick="play('wordleunlimited.html')">Wordle</button>
+<button onclick="play('wordleunlimited.html')">Wordle Unlimited</button>
+<button onclick="play('worldshardestgame.html')">World's Hardest Game</button>
+<button onclick="play('zombierush.html')">Zombie Rush</button>
 
 </div>
 </div>
@@ -160,8 +189,9 @@ iframe{
 function play(game){
     document.getElementById("menu").style.display = "none";
     document.getElementById("gameScreen").style.display = "block";
+
     document.getElementById("gameFrame").src =
-        "https://altf4.sbs/games/" + game;
+        "https://altf4.sbs/games/all_games/" + game;
 }
 
 function back(){
