@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OptiMario</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:url("fondo.jpg") center center/cover no-repeat fixed;
+    height:100vh;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(8px);
+    background:rgba(0,0,0,0.3);
+}
+
+.logo{
+    position:fixed;
+    top:15px;
+    left:15px;
+    color:#8ff;
+    font-size:42px;
+    font-weight:bold;
+    z-index:10;
+    text-shadow:0 0 10px cyan;
+}
+
+.menu{
+    position:fixed;
+    left:15px;
+    top:70px;
+    width:200px;
+    background:rgba(0,0,0,0.45);
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    padding:10px;
+    z-index:10;
+}
+
+.menu button{
+    width:100%;
+    padding:12px;
+    margin:5px 0;
+    border:none;
+    border-radius:8px;
+    background:none;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.menu button:hover{
+    background:#4f7f7f;
+}
+
+.buscador{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:350px;
+    z-index:10;
+}
+
+.buscador input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:15px;
+    background:rgba(0,0,0,0.5);
+    color:white;
+}
+
+.panel{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:450px;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:15px;
+    color:white;
+    z-index:10;
+}
+
+.panel h2{
+    margin-bottom:10px;
+}
+
+.programa{
+    background:rgba(255,255,255,0.05);
+    padding:10px;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+.descargar{
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#4f7f7f;
+    color:white;
+    cursor:pointer;
+}
+
+.descargar:hover{
+    background:#6ea0a0;
+}
+</style>
+</head>
+<body>
+
+<div class="logo">
+OptiMario
+</div>
+
+<div class="buscador">
+<input type="text" placeholder="Buscar...">
+</div>
+
+<div class="menu">
+<button onclick="mostrarWindows()">🪟 Windows</button>
+<button onclick="mostrarLinux()">🐧 Linux</button>
+</div>
+
+<div class="panel" id="contenido">
+<h2>Bienvenido a OptiMario</h2>
+<p>Selecciona una categoría.</p>
+</div>
+
+<script>
+
+function mostrarWindows(){
+document.getElementById("contenido").innerHTML=`
+<h2>Windows</h2>
+
+<div class="programa">
+<h3>Mi Programa Windows</h3>
+<p>Descripción aquí.</p>
+
+<button class="descargar"
+onclick="window.location.href='archivo.exe'">
+Descargar
+</button>
+</div>
+`;
+}
+
+function mostrarLinux(){
+document.getElementById("contenido").innerHTML=`
+<h2>Linux</h2>
+
+<div class="programa">
+<h3>Mi Programa Linux</h3>
+<p>Descripción aquí.</p>
+
+<button class="descargar"
+onclick="window.location.href='archivo.AppImage'">
+Descargar
+</button>
+</div>
+`;
+}
+
+</script>
+
+</body>
+</html>
