@@ -130,13 +130,49 @@ body::before{
     background:#27ae60;
 }
 
+/* MODALES */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.caja{
+    background:#1f1f1f;
+    padding:20px;
+    border-radius:12px;
+    width:420px;
+    color:white;
+    text-align:center;
+}
+
+.btn{
+    margin:5px;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.verde{
+    background:#2ecc71;
+    color:white;
+}
+
+.rojo{
+    background:#e74c3c;
+    color:white;
+}
+
 </style>
 </head>
 <body>
 
-<div class="logo">
-OPTIMARIO
-</div>
+<div class="logo">OPTIMARIO</div>
 
 <div class="buscador">
 <input type="text" placeholder="Buscar...">
@@ -149,65 +185,143 @@ OPTIMARIO
 
 <div class="panel" id="contenido">
 
-    <h2>Windows</h2>
+<h2>Windows</h2>
 
-    <div class="programa">
-        <h3>Programa de ejemplo</h3>
-        <p>Descripción del programa.</p>
+<div class="programa">
+    <h3>Programa de ejemplo</h3>
+    <p>Descripción del programa</p>
 
-        <button class="descargar"
-        onclick="window.location.href='archivo.exe'">
-            Descargar
-        </button>
-    </div>
+    <button class="descargar"
+    onclick="abrirModal('archivo.exe')">
+        Descargar
+    </button>
+</div>
 
+</div>
+
+<!-- MODAL 1 -->
+<div class="modal" id="modal1">
+<div class="caja">
+
+<h2>¿Seguro que quieres descargarlo?</h2>
+
+<p>
+Si descargas este archivo no me hago responsable de virus o daños.
+</p>
+
+<p id="timer">Continuar en 3...</p>
+
+<button class="btn rojo" onclick="cerrar()">No continuar</button>
+<button class="btn verde" id="continuar" onclick="siguiente()" disabled>Continuar</button>
+
+</div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal" id="modal2">
+<div class="caja">
+
+<h2>Descarga</h2>
+
+<p>Pulsa descargar o usa tutorial si no sabes.</p>
+
+<button class="btn verde" onclick="descargar()">⬇ Descargar</button>
+<button class="btn" onclick="window.open('tutorial.html')">📘 Tutorial</button>
+
+</div>
 </div>
 
 <script>
 
+let link = "";
+let time = 3;
+let intervalo;
+
+/* MENU */
 function quitarActivos(){
-    document.getElementById("windows").classList.remove("activo");
-    document.getElementById("linux").classList.remove("activo");
+document.getElementById("windows").classList.remove("activo");
+document.getElementById("linux").classList.remove("activo");
 }
 
 function mostrarWindows(){
 
-    quitarActivos();
-    document.getElementById("windows").classList.add("activo");
+quitarActivos();
+document.getElementById("windows").classList.add("activo");
 
-    document.getElementById("contenido").innerHTML = `
-        <h2>Windows</h2>
+document.getElementById("contenido").innerHTML=`
+<h2>Windows</h2>
 
-        <div class="programa">
-            <h3>Programa de ejemplo</h3>
-            <p>Descripción del programa.</p>
+<div class="programa">
+<h3>Programa de ejemplo</h3>
+<p>Descripción del programa</p>
 
-            <button class="descargar"
-            onclick="window.location.href='archivo.exe'">
-                Descargar
-            </button>
-        </div>
-    `;
+<button class="descargar"
+onclick="abrirModal('archivo.exe')">
+Descargar
+</button>
+</div>
+`;
 }
 
 function mostrarLinux(){
 
-    quitarActivos();
-    document.getElementById("linux").classList.add("activo");
+quitarActivos();
+document.getElementById("linux").classList.add("activo");
 
-    document.getElementById("contenido").innerHTML = `
-        <h2>Linux</h2>
+document.getElementById("contenido").innerHTML=`
+<h2>Linux</h2>
 
-        <div class="programa">
-            <h3>Programa Linux</h3>
-            <p>Descripción del programa.</p>
+<div class="programa">
+<h3>Programa Linux</h3>
+<p>Descripción del programa</p>
 
-            <button class="descargar"
-            onclick="window.location.href='archivo.AppImage'">
-                Descargar
-            </button>
-        </div>
-    `;
+<button class="descargar"
+onclick="abrirModal('archivo.AppImage')">
+Descargar
+</button>
+</div>
+`;
+}
+
+/* MODALES */
+function abrirModal(url){
+
+link = url;
+
+document.getElementById("modal1").style.display="flex";
+
+time = 3;
+document.getElementById("continuar").disabled=true;
+
+clearInterval(intervalo);
+
+intervalo = setInterval(()=>{
+
+time--;
+
+document.getElementById("timer").innerText="Continuar en "+time+"...";
+
+if(time<=0){
+clearInterval(intervalo);
+document.getElementById("continuar").disabled=false;
+document.getElementById("timer").innerText="Ya puedes continuar";
+}
+
+},1000);
+
+}
+
+function cerrar(){
+document.getElementById("modal1").style.display="none";
+}
+
+function siguiente(){
+document.getElementById("modal1").style.display="none";
+document.getElementById("modal2").style.display="flex";
+}
+
+function descargar(){
+window.location.href = link;
 }
 
 </script>
