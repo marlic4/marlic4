@@ -187,7 +187,6 @@ body::before{
 
 <h2>Windows</h2>
 
-<!-- 👇 ZONA PARA AÑADIR APPS (WINDOWS) -->
 <div class="programa">
     <h3>Programa de ejemplo</h3>
     <p>Descripción del programa</p>
@@ -197,7 +196,6 @@ body::before{
         Descargar
     </button>
 </div>
-<!-- 👆 PEGA MÁS APPS AQUÍ -->
 
 </div>
 
@@ -253,7 +251,6 @@ document.getElementById("windows").classList.add("activo");
 document.getElementById("contenido").innerHTML=`
 <h2>Windows</h2>
 
-<!-- 👇 ZONA PARA AÑADIR APPS (WINDOWS) -->
 <div class="programa">
 <h3>Programa de ejemplo</h3>
 <p>Descripción del programa</p>
@@ -263,7 +260,6 @@ onclick="abrirModal('archivo.exe')">
 Descargar
 </button>
 </div>
-<!-- 👆 PEGA MÁS APPS AQUÍ -->
 `;
 }
 
@@ -275,7 +271,6 @@ document.getElementById("linux").classList.add("activo");
 document.getElementById("contenido").innerHTML=`
 <h2>Linux</h2>
 
-<!-- 👇 ZONA PARA AÑADIR APPS (LINUX) -->
 <div class="programa">
 <h3>Programa Linux</h3>
 <p>Descripción del programa</p>
@@ -285,13 +280,25 @@ onclick="abrirModal('archivo.AppImage')">
 Descargar
 </button>
 </div>
-<!-- 👆 PEGA MÁS APPS AQUÍ -->
+
+<!-- NUEVA APP -->
+<div class="programa">
+<h3>Mariocraft</h3>
+<p>Juego para Linux</p>
+
+<button class="descargar"
+onclick="window.location.href='http://aledrive.sbs/api/public/dl/Td8uAm3M'">
+Descargar
+</button>
+</div>
 `;
 }
 
 /* MODALES */
 function abrirModal(url){
+
 link = url;
+
 document.getElementById("modal1").style.display="flex";
 
 time = 3;
