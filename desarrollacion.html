@@ -78,7 +78,6 @@ body::before{
     color:white;
     font-size:18px;
     cursor:pointer;
-    transition:0.2s;
 }
 
 .menu button:hover{
@@ -109,10 +108,6 @@ body::before{
     border-radius:10px;
     padding:15px;
     margin-top:15px;
-}
-
-.programa h3{
-    margin-bottom:8px;
 }
 
 .descargar{
@@ -148,6 +143,7 @@ body::before{
     width:420px;
     color:white;
     text-align:center;
+    position:relative;
 }
 
 .btn{
@@ -168,8 +164,23 @@ body::before{
     color:white;
 }
 
+.x{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:8px;
+    background:#e74c3c;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="logo">OPTIMARIO</div>
@@ -187,23 +198,21 @@ body::before{
 <h2>Windows</h2>
 
 <div class="programa">
-    <h3>Programa de ejemplo</h3>
-    <p>Descripción del programa</p>
+<h3>Programa de ejemplo</h3>
+<p>Descripción del programa</p>
 
-    <button class="descargar"
-    onclick="abrirModal('archivo.exe')">
-        Descargar
-    </button>
+<button class="descargar" onclick="abrirModal('archivo.exe')">
+Descargar
+</button>
 </div>
 
 </div>
 
-<!-- MODALES -->
+<!-- MODAL 1 -->
 <div class="modal" id="modal1">
 <div class="caja">
 
 <h2>¿Seguro que quieres descargarlo?</h2>
-
 <p>Si descargas este archivo no me hago responsable de virus o daños.</p>
 
 <p id="timer">Continuar en 3...</p>
@@ -214,11 +223,13 @@ body::before{
 </div>
 </div>
 
+<!-- MODAL 2 -->
 <div class="modal" id="modal2">
 <div class="caja">
 
-<h2>Descarga</h2>
+<button class="x" onclick="cerrarModal2()">✕</button>
 
+<h2>Descarga</h2>
 <p>Pulsa descargar o usa tutorial si no sabes.</p>
 
 <button class="btn verde" onclick="descargar()">⬇ Descargar</button>
@@ -239,7 +250,6 @@ document.getElementById("linux").classList.remove("activo");
 }
 
 function mostrarWindows(){
-
 quitarActivos();
 document.getElementById("windows").classList.add("activo");
 
@@ -250,26 +260,19 @@ document.getElementById("contenido").innerHTML=`
 <h3>Programa de ejemplo</h3>
 <p>Descripción del programa</p>
 
-<button class="descargar"
-onclick="abrirModal('archivo.exe')">
+<button class="descargar" onclick="abrirModal('archivo.exe')">
 Descargar
 </button>
 </div>
 
 <div class="programa">
 <h3>Mariocraft</h3>
-<p>Juego para Windows</p>
-
-<button class="descargar"
-onclick="abrirModal('http://aledrive.sbs/api/public/dl/Td8uAm3M')">
-Descargar
-</button>
+<p>Juego para Linux (solo en Linux)</p>
 </div>
 `;
 }
 
 function mostrarLinux(){
-
 quitarActivos();
 document.getElementById("linux").classList.add("activo");
 
@@ -280,8 +283,7 @@ document.getElementById("contenido").innerHTML=`
 <h3>Programa Linux</h3>
 <p>Descripción del programa</p>
 
-<button class="descargar"
-onclick="abrirModal('archivo.AppImage')">
+<button class="descargar" onclick="abrirModal('archivo.AppImage')">
 Descargar
 </button>
 </div>
@@ -290,8 +292,7 @@ Descargar
 <h3>Mariocraft</h3>
 <p>Juego para Linux</p>
 
-<button class="descargar"
-onclick="abrirModal('http://aledrive.sbs/api/public/dl/Td8uAm3M')">
+<button class="descargar" onclick="abrirModal('http://aledrive.sbs/api/public/dl/Td8uAm3M')">
 Descargar
 </button>
 </div>
@@ -299,9 +300,7 @@ Descargar
 }
 
 function abrirModal(url){
-
 link = url;
-
 document.getElementById("modal1").style.display="flex";
 
 time = 3;
@@ -310,19 +309,14 @@ document.getElementById("continuar").disabled=true;
 clearInterval(intervalo);
 
 intervalo = setInterval(()=>{
-
 time--;
-
 document.getElementById("timer").innerText="Continuar en "+time+"...";
-
 if(time<=0){
 clearInterval(intervalo);
 document.getElementById("continuar").disabled=false;
 document.getElementById("timer").innerText="Ya puedes continuar";
 }
-
 },1000);
-
 }
 
 function cerrar(){
@@ -332,6 +326,10 @@ document.getElementById("modal1").style.display="none";
 function siguiente(){
 document.getElementById("modal1").style.display="none";
 document.getElementById("modal2").style.display="flex";
+}
+
+function cerrarModal2(){
+document.getElementById("modal2").style.display="none";
 }
 
 function descargar(){
