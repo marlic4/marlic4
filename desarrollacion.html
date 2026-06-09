@@ -184,7 +184,6 @@ body::before{
 </div>
 
 <div class="panel" id="contenido">
-
 <h2>Windows</h2>
 
 <div class="programa">
@@ -199,15 +198,13 @@ body::before{
 
 </div>
 
-<!-- MODAL 1 -->
+<!-- MODALES -->
 <div class="modal" id="modal1">
 <div class="caja">
 
 <h2>¿Seguro que quieres descargarlo?</h2>
 
-<p>
-Si descargas este archivo no me hago responsable de virus o daños.
-</p>
+<p>Si descargas este archivo no me hago responsable de virus o daños.</p>
 
 <p id="timer">Continuar en 3...</p>
 
@@ -217,7 +214,6 @@ Si descargas este archivo no me hago responsable de virus o daños.
 </div>
 </div>
 
-<!-- MODAL 2 -->
 <div class="modal" id="modal2">
 <div class="caja">
 
@@ -237,7 +233,6 @@ let link = "";
 let time = 3;
 let intervalo;
 
-/* MENU */
 function quitarActivos(){
 document.getElementById("windows").classList.remove("activo");
 document.getElementById("linux").classList.remove("activo");
@@ -257,6 +252,16 @@ document.getElementById("contenido").innerHTML=`
 
 <button class="descargar"
 onclick="abrirModal('archivo.exe')">
+Descargar
+</button>
+</div>
+
+<div class="programa">
+<h3>Mariocraft</h3>
+<p>Juego para Windows</p>
+
+<button class="descargar"
+onclick="abrirModal('http://aledrive.sbs/api/public/dl/Td8uAm3M')">
 Descargar
 </button>
 </div>
@@ -281,20 +286,18 @@ Descargar
 </button>
 </div>
 
-<!-- NUEVA APP -->
 <div class="programa">
 <h3>Mariocraft</h3>
 <p>Juego para Linux</p>
 
 <button class="descargar"
-onclick="window.location.href='http://aledrive.sbs/api/public/dl/Td8uAm3M'">
+onclick="abrirModal('http://aledrive.sbs/api/public/dl/Td8uAm3M')">
 Descargar
 </button>
 </div>
 `;
 }
 
-/* MODALES */
 function abrirModal(url){
 
 link = url;
